@@ -1,7 +1,7 @@
 {
-  "name": "fastify-plugin-template",
-  "version": "0.0.0",
-  "description": "Plugin for fastify",
+  "name": "@autotelic/fastify-stream-to-csv",
+  "version": "0.1.0",
+  "description": "Stream CSVs from Fastify routes",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,26 +15,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/autotelic/fastify-plugin-template.git"
+    "url": "git+https://github.com/autotelic/fastify-stream-to-csv.git"
   },
   "keywords": [],
-  "author": "Autotelic Development Ltd <info@autotelic.com>",
+  "author": "Autotelic Development Ltd <hello@autotelic.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/autotelic/fastify-plugin-template/issues"
+    "url": "https://github.com/autotelic/fastify-stream-to-csv/issues"
   },
-  "homepage": "https://github.com/autotelic/fastify-plugin-template#readme",
+  "homepage": "https://github.com/autotelic/fastify-stream-to-csv#readme",
   "dependencies": {
+    "@fast-csv/format": "^4.3.5",
     "fastify-plugin": "^3.0.0"
   },
   "devDependencies": {
     "ava": "^3.15.0",
     "c8": "^7.10.0",
+    "csv-parse": "^5.0.4",
     "fastify": "^3.0.0",
-    "fastify-cli": "^2.5.1",
+    "fastify-cli": "^2.15.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
-    "standard": "^16.0.3"
+    "standard": "^16.0.3",
+    "supertest": "^6.2.2"
   },
   "lint-staged": {
     "*.{js,jsx}": [
