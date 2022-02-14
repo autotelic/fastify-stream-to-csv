@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+
+  typesense:
+    image: typesense/typesense:0.21.0
+    container_name: stream-to-csv-ts-example
+    entrypoint: sh -c "/opt/typesense-server --data-dir /data
+      --api-key=supersecretapikey --enable-cors"
+    volumes:
+      - typesense-data:/data
+    ports:
+      - '8108:8108'
+
+volumes:
+  typesense-data:
+    driver: local
