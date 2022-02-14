@@ -21,7 +21,7 @@ module.exports = async function (fastify, options) {
     }
 
     // use reply decorator
-    reply
+    await reply
       .header('Content-disposition', 'attachment; filename=basic-example.csv')
       .streamToCsv(readStream, rowFormatter, { csvOptions })
   })
