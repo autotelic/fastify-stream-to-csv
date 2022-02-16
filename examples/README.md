@@ -24,3 +24,13 @@ with the api key `supersecretapikey`
 - `fastify start -l info -p 3002 -w index.js`
 - browse to http://localhost:3001/book-report
 - `typesense-example.csv` will be downloaded
+
+## Postgres
+
+An example using a postgresql query stream
+
+- `cd examples/postgres-stream`
+- `docker compose up` to start Postgres
+- `fastify start -l info -p 3003 -w index.js`
+- browse to http://localhost:3003/db-report
+- `postgres-example.csv` will be downloaded
