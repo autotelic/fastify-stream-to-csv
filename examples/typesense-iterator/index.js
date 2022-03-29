@@ -1,21 +1,22 @@
+/* eslint-disable camelcase */
 const { Readable } = require('stream')
 const { fastifyStreamToCsv } = require('../../')
 const Typesense = require('typesense')
 
 const client = new Typesense.Client({
-  'nodes': [{
-    'host': 'localhost',
-    'port': '8108',
-    'protocol': 'http'
+  nodes: [{
+    host: 'localhost',
+    port: '8108',
+    protocol: 'http'
   }],
-  'apiKey': 'supersecretapikey',
-  'connectionTimeoutSeconds': 2
+  apiKey: 'supersecretapikey',
+  connectionTimeoutSeconds: 2
 })
 
 // async generator we can turn into a Readable
-const searchPager = async function* () {
+const searchPager = async function * () {
   let total, shown
-  let page = 1, per_page = 5
+  let page = 1; const per_page = 5
   do {
     const searchResults = await client.collections('books')
       .documents()
@@ -41,7 +42,6 @@ const searchPager = async function* () {
 }
 
 module.exports = async function (fastify, options) {
-
   fastify.register(fastifyStreamToCsv)
 
   fastify.get('/book-report', async function (req, reply) {
