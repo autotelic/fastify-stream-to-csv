@@ -2,7 +2,6 @@ const { Readable } = require('stream')
 const { fastifyStreamToCsv } = require('../../')
 
 module.exports = async function (fastify, options) {
-
   fastify.register(fastifyStreamToCsv)
 
   fastify.get('/report', async function (req, reply) {

@@ -59,7 +59,7 @@ test('Should create a CSV file:', async (t) => {
   const csvResponse = parse(response.body)
 
   t.deepEqual(csvResponse, [
-    [ 'a', 'b', 'c' ],
-    [ 'a0', 'b0', 'c0' ]
+    ['a', 'b', 'c'],
+    ['a0', 'b0', 'c0']
   ])
 })

@@ -5,7 +5,6 @@ const { fastifyStreamToCsv } = require('../../')
 const connectionString = 'postgres://postgres:password@0.0.0.0:5432/postgres?sslmode=disable'
 
 module.exports = async function (fastify, options) {
-
   fastify.register(fastifyStreamToCsv)
 
   fastify.get('/db-report', async function (req, reply) {
