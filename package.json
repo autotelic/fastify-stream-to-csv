@@ -32,7 +32,7 @@
     "c8": "^7.10.0",
     "csv-parse": "^5.0.4",
     "fastify": "^3.0.0",
-    "fastify-cli": "^2.15.0",
+    "fastify-cli": "^5.5.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "pg": "^8.7.3",
