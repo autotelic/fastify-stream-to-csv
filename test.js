@@ -29,11 +29,13 @@ test('Should create a CSV file:', async (t) => {
       return [`a${num}`, `b${num}`, `c${num}`]
     }
 
-    reply.streamToCsv(readStream, rowFormatter, {
+    await reply.streamToCsv(readStream, rowFormatter, {
       csvOptions: {
         headers: ['a', 'b', 'c']
       }
     })
+
+    return reply
   })
 
   await fastify.ready()

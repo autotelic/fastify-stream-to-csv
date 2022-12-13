@@ -66,8 +66,10 @@ module.exports = async function (fastify, options) {
     }
 
     // use reply decorator
-    await reply
+    reply
       .header('Content-disposition', 'attachment; filename=typesense-example.csv')
       .streamToCsv(readStream, rowFormatter, { csvOptions })
+
+    return reply
   })
 }

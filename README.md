@@ -33,9 +33,11 @@ fastify.get('/report', async function (req, reply) {
   }
 
   // use reply decorator
-  await reply
+  reply
     .header('Content-disposition', 'attachment; filename=basic-example.csv')
     .streamToCsv(readStream, rowFormatter, { csvOptions })
+
+  return reply
 }
 ```
 

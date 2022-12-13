@@ -33,5 +33,7 @@ module.exports = async function (fastify, options) {
 
     // clean up
     await client.end()
+
+    return reply
   })
 }
