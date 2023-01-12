@@ -25,7 +25,7 @@
   "homepage": "https://github.com/autotelic/fastify-stream-to-csv#readme",
   "dependencies": {
     "@fast-csv/format": "^4.3.5",
-    "fastify-plugin": "^3.0.0"
+    "fastify-plugin": "^4.5.0"
   },
   "devDependencies": {
     "ava": "^4.0.1",
