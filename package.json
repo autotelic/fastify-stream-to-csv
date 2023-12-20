@@ -1,6 +1,6 @@
 {
   "name": "@autotelic/fastify-stream-to-csv",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Stream CSVs from Fastify routes",
   "main": "index.js",
   "directories": {
