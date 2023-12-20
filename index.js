@@ -26,6 +26,5 @@ const fastifyStreamToCsv = async (fastify, options) => {
 }
 
 module.exports = fp(fastifyStreamToCsv, {
-  fastify: '4.x',
   name: 'fastify-stream-to-csv'
 })
