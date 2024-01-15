@@ -1,7 +1,9 @@
 /* eslint-disable camelcase */
 const { Readable } = require('stream')
-const { fastifyStreamToCsv } = require('../../')
+
 const Typesense = require('typesense')
+
+const { fastifyStreamToCsv } = require('../../')
 
 const client = new Typesense.Client({
   nodes: [{
@@ -14,9 +16,11 @@ const client = new Typesense.Client({
 })
 
 // async generator we can turn into a Readable
-const searchPager = async function * () {
+async function * searchPager () {
   let total, shown
-  let page = 1; const per_page = 5
+  let page = 1
+  const per_page = 5
+
   do {
     const searchResults = await client.collections('books')
       .documents()
@@ -34,6 +38,7 @@ const searchPager = async function * () {
     total = found
     shown = page * per_page
     page = page + 1
+
     // we want to yield each hit to be a csv row
     for (const hit of hits) {
       yield hit
@@ -41,10 +46,10 @@ const searchPager = async function * () {
   } while (shown < total)
 }
 
-module.exports = async function (fastify, options) {
+module.exports = async function csv (fastify, options) {
   fastify.register(fastifyStreamToCsv)
 
-  fastify.get('/book-report', async function (req, reply) {
+  fastify.get('/book-report', async function report (req, reply) {
     // create a readable stream from our search pager
     const readStream = Readable.from(searchPager())
 
