@@ -1,8 +1,11 @@
+const { Readable } = require('stream')
+
+// eslint-disable-next-line import/no-unresolved
 const test = require('ava')
+// eslint-disable-next-line import/no-unresolved
+const { parse } = require('csv-parse/sync')
 const Fastify = require('fastify')
 const supertest = require('supertest')
-const { Readable } = require('stream')
-const { parse } = require('csv-parse/sync')
 
 const { fastifyStreamToCsv } = require('./index')
 
@@ -22,12 +25,10 @@ test('Should create a CSV file:', async (t) => {
 
   fastify.register(fastifyStreamToCsv)
 
-  fastify.get('/', async function (req, reply) {
+  fastify.get('/', async function report (req, reply) {
     const readStream = Readable.from(Array.from(Array(1).keys()))
 
-    const rowFormatter = num => {
-      return [`a${num}`, `b${num}`, `c${num}`]
-    }
+    const rowFormatter = num => [`a${num}`, `b${num}`, `c${num}`]
 
     await reply.streamToCsv(readStream, rowFormatter, {
       csvOptions: {

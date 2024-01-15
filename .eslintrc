@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "extends": [
+    "@autotelic/eslint-config-js"
+  ],
+  "settings": {
+    "node": {
+      "version": "^18.x"
+    }
+  },
+  "overrides": [{
+    "files": ["*.ts"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"]
+  }],
+  "rules": {
+    "multiline-comment-style": "off"
+  }
+}

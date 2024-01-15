@@ -1,17 +1,16 @@
 const { Readable } = require('stream')
+
 const { fastifyStreamToCsv } = require('../../')
 
-module.exports = async function (fastify, options) {
+module.exports = async function csv (fastify, options) {
   fastify.register(fastifyStreamToCsv)
 
-  fastify.get('/report', async function (req, reply) {
+  fastify.get('/report', async function report (req, reply) {
     // create a readable stream
     const readStream = Readable.from(Array.from(Array(100000).keys()))
 
     // create a row formatter
-    const rowFormatter = num => {
-      return [`a${num}`, `b${num}`, `c${num}`]
-    }
+    const rowFormatter = num => [`a${num}`, `b${num}`, `c${num}`]
 
     // these are fast-csv format options
     const csvOptions = {
