@@ -1,7 +1,7 @@
 'use strict'
 
-const fp = require('fastify-plugin')
 const { format } = require('@fast-csv/format')
+const fp = require('fastify-plugin')
 
 async function replyDecorator (
   readStream,

@@ -1,6 +1,8 @@
 const { Readable } = require('stream')
 
+// eslint-disable-next-line import/no-unresolved
 const test = require('ava')
+// eslint-disable-next-line import/no-unresolved
 const { parse } = require('csv-parse/sync')
 const Fastify = require('fastify')
 const supertest = require('supertest')

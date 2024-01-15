@@ -12,10 +12,10 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "c8 --100 ava",
     "lint": "eslint .",
-    "lint:ci": "eslint . --ignore-pattern example/",
-    "validate": "npm run lint && npm run test"
+    "test": "c8 --100 ava",
+    "test:types": "tsd",
+    "validate": "npm run lint && npm run test && npm run test:types"
   },
   "repository": {
     "type": "git",
@@ -45,6 +45,7 @@
     "pg": "^8.7.3",
     "pg-query-stream": "^4.2.3",
     "supertest": "^6.2.2",
+    "tsd": "^0.30.3",
     "typesense": "^1.1.3"
   }
 }
